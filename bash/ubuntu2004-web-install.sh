@@ -267,6 +267,11 @@ if [[ ${INSTALL} == "y" ]]; then
         SESSION_TIMEOUT=$session
     fi
 
+    # update repos
+    apt install software-properties-common
+    add-apt-repository ppa:ondrej/php
+    apt update
+
     # install php
     apt-get -y install php${PHP_VERSION} php${PHP_VERSION}-cli php${PHP_VERSION}-common php${PHP_VERSION}-dev \
     php${PHP_VERSION}-curl php${PHP_VERSION}-gmp php${PHP_VERSION}-mysql php${PHP_VERSION}-readline \
