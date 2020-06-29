@@ -7,7 +7,8 @@ echo "Configuring Ubuntu 20.04 LTS Focal Fossa"
 echo ""
 
 # validate BASH info
-if ((BASH_VERSINFO[0] < 4))
+if [[ ${BASH_VERSINFO[0]} < 4 ]]
+# if ((BASH_VERSINFO[0] < 4))                                                                                           # commented out but this works too!
 	then
 		echo "Requires BASH version 4.0 or greater"
 		exit 0
